@@ -1,0 +1,523 @@
+/* =========================================================================
+   BHT Reservation Form — Popup Styles
+   ---------------------------------------------------------------------------
+   All rules are scoped under `.bht-rf-` to avoid Divi / theme conflicts.
+
+   IMPORTANT — global typography
+   The site's body type (18px / weight 400 / color #384049 / line-height 1.6)
+   is set in /style.css on `body`. The intro paragraph and any other inheriting
+   text rely on that — DO NOT redeclare these values here. If you need to
+   change the global body text, change it in /style.css.
+   ========================================================================= */
+
+/* ---------- Overlay ---------- */
+.bht-rf-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 999999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.55);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+}
+
+.bht-rf-overlay.bht-rf-visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* ---------- Modal ----------
+   Wider than a single-column form because the body is a 2-col grid on
+   desktop. Collapses to single column under 880px (see Responsive). */
+.bht-rf-modal {
+    position: relative;
+    width: 90%;
+    max-width: 1280px;
+    max-height: 92vh;
+    overflow-y: auto;
+    background: #fff;
+   
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.18);
+    padding: 2.5rem 2.25rem;
+    transform: scale(0.95) translateY(10px);
+    transition: transform 0.25s ease;
+}
+
+.bht-rf-overlay.bht-rf-visible .bht-rf-modal {
+    transform: scale(1) translateY(0);
+}
+
+/* ---------- Close button ---------- */
+.bht-rf-close {
+    position: absolute;
+    top: 12px;
+    right: 14px;
+    background: none;
+    border: none;
+    font-size: 1.75rem;
+    line-height: 1;
+    color: #6b7280;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: background 0.15s, color 0.15s;
+}
+
+.bht-rf-close:hover {
+    background: #f3f4f6;
+    color: #1C4168;
+}
+
+/* =========================================================================
+   Header bar — three inline crumbs separated by 1px vertical dividers.
+   On narrow screens the bar wraps to a column and the dividers self-hide
+   (see Responsive). The horizontal <hr> below it stays at all sizes.
+   ========================================================================= */
+.bht-rf-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    row-gap: 6px;
+    padding-right: 2.5rem; /* leave space for the close button */
+}
+
+.bht-rf-header-item {
+    font-size: 18px;
+    font-weight: 500;
+    color: #1C4168;
+    line-height: 1.4;
+}
+
+.bht-rf-header-item strong {
+    font-weight: 600;
+}
+
+.bht-rf-header-divider {
+    width: 1px;
+    align-self: stretch;
+    min-height: 1.2em;
+    background: rgba(206, 211, 220, 0.5); /* #CED3DC80 */
+    margin: 0 12px;
+}
+
+/* ---------- Horizontal dividers (header / bottom) ---------- */
+.bht-rf-hr {
+    border: 0;
+    border-top: 1px solid rgba(206, 211, 220, 0.5);
+    margin: 1rem 0 0;
+}
+
+.bht-rf-hr--bottom {
+    margin: 2rem 0 1.25rem;
+}
+
+/* ---------- Intro paragraph ----------
+   Explicit size on this one (18 desktop / 16 mobile) so it tracks the rest
+   of the form's mobile -2px scale instead of inheriting body 18px at every
+   breakpoint. Color / weight / line-height still inherit from body. */
+.bht-rf-intro {
+    font-size: 18px;
+    margin: 1rem 0 60px;
+}
+
+/* ---------- Messages (errors / success) ---------- */
+.bht-rf-messages {
+    margin-bottom: 1rem;
+}
+
+.bht-rf-messages:empty {
+    display: none;
+}
+
+.bht-rf-messages .bht-rf-error-msg {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    color: #991b1b;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* =========================================================================
+   Two-column grid
+   ========================================================================= */
+.bht-rf-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+}
+
+.bht-rf-col {
+    display: flex;
+    flex-direction: column;
+}
+
+/* ---------- Section headings ---------- */
+.bht-rf-section-title {
+    font-family: inherit;
+    font-size: 18px;
+    font-weight: 600;
+    color: #384049;
+    margin: 0 0 1.5rem;
+    line-height: 1.3;
+    text-transform: none;
+    letter-spacing: 0;
+}
+
+/* When a hint paragraph follows the title, the hint owns the bottom
+   spacing — don't double it up. */
+.bht-rf-section-title + .bht-rf-section-hint {
+    margin-top: -1rem;
+}
+
+/* Subsequent section titles in the same column get a top spacer so they
+   visually break from the previous field group. */
+.bht-rf-col > .bht-rf-section-title:not(:first-child) {
+    margin-top: 1.75rem;
+}
+
+.bht-rf-section-hint {
+    font-size: 16px;
+    color: #384049;
+    margin: 0 0 14px;
+    line-height: 1.5;
+}
+
+.bht-rf-req {
+    color: #dc2626;
+    margin-left: 2px;
+}
+
+/* =========================================================================
+   Fields
+   ========================================================================= */
+.bht-rf-field {
+    margin-bottom: 1.75rem;
+}
+
+.bht-rf-modal label {
+    display: block;
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 6px;
+    color: #384049;
+}
+
+.bht-rf-modal input[type="text"],
+.bht-rf-modal input[type="email"],
+.bht-rf-modal input[type="tel"],
+.bht-rf-modal input[type="number"],
+.bht-rf-modal select,
+.bht-rf-modal textarea {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: inherit;
+    border: 1px solid #CED3DC;
+    border-radius: 8px;
+    background: #fff;
+    color: #384049;
+    transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+/* Placeholder — separate rule so the spec is one source of truth. */
+.bht-rf-modal ::placeholder {
+    color: #81868C;
+    font-size: 18px;
+    font-weight: 400;
+    opacity: 1;
+}
+
+.bht-rf-modal input:focus,
+.bht-rf-modal select:focus,
+.bht-rf-modal textarea:focus {
+    outline: none;
+    border-color: #1C4168;
+    box-shadow: 0 0 0 3px rgba(28, 65, 104, 0.12);
+}
+
+.bht-rf-modal textarea {
+    resize: vertical;
+    min-height: 110px;
+}
+
+/* ---------- Custom dropdown chevron ----------
+   Native arrow stripped; replaced with a clean down-pointing chevron in
+   #384049, embedded as a data URI so it ships with the CSS. */
+.bht-rf-modal select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    padding-right: 42px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='10' viewBox='0 0 14 10' fill='none'><path d='M1 1.5L7 7.5L13 1.5' stroke='%23384049' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    background-size: 14px 10px;
+}
+
+/* ---------- Row (two fields side by side) ---------- */
+.bht-rf-row {
+    display: flex;
+    gap: 1rem;
+}
+
+.bht-rf-row > .bht-rf-field {
+    flex: 1;
+}
+
+/* Persons (number) is narrower than room type — a 1–2 digit count doesn't
+   need a full half of the row. Width is large enough to keep the
+   "Number of persons *" label on a single line. */
+.bht-rf-row > .bht-rf-field:has(#bhtPersons) {
+    flex: 0 0 190px;
+}
+
+/* =========================================================================
+   Departure cards
+   ========================================================================= */
+.bht-rf-departures {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 1.25rem;
+}
+
+.bht-rf-departure-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    border: 1px solid #CED3DC;
+    border-radius: 12px;
+    background: #FCFCFD;
+    cursor: pointer;
+    transition: border-color 0.15s, background 0.15s;
+    line-height: 1.3;
+}
+
+.bht-rf-departure-option:hover {
+    border-color: #1C4168;
+}
+
+.bht-rf-departure-option input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+    cursor: pointer;
+    accent-color: #1C4168;
+    margin: 0;
+}
+
+.bht-rf-departure-label {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1C4168;
+}
+
+.bht-rf-departures-error {
+    color: #dc2626;
+    font-size: 13px;
+    margin-top: -0.7rem;
+    margin-bottom: 0.75rem;
+}
+
+/* =========================================================================
+   Compliance / inline checkboxes (extension, terms, no-refund)
+   ========================================================================= */
+.bht-rf-checkbox-field {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin: 0.65rem 0 1.15rem;
+}
+
+.bht-rf-checkbox-field input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+    cursor: pointer;
+    accent-color: #1C4168;
+    margin-top: 3px;
+}
+
+.bht-rf-checkbox-field label {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 400;
+    color: #384049;
+    cursor: pointer;
+    line-height: 1.45;
+}
+
+.bht-rf-checkbox-field--terms {
+    margin-top: 1.5rem;
+}
+
+.bht-rf-checkbox-field a {
+    color: #1C4168;
+    text-decoration: underline;
+}
+
+.bht-rf-checkbox-field a:hover {
+    text-decoration: none;
+}
+
+/* =========================================================================
+   Submit button — visual styling lives in the global `.bht-cta` utility
+   (see /style.css → 22px / weight 500 / blue-dark pill). The form only
+   contributes spacing here.
+   ========================================================================= */
+.bht-rf-submit {
+    margin-top: 1.5rem;
+}
+
+/* =========================================================================
+   Privacy note (below the bottom horizontal divider)
+   ========================================================================= */
+.bht-rf-privacy {
+    font-size: 16px;
+    color: #81868C;
+    text-align: left;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.bht-rf-privacy a {
+    color: #1C4168;
+    text-decoration: underline;
+}
+
+.bht-rf-privacy a:hover {
+    text-decoration: none;
+}
+
+/* =========================================================================
+   Field error states
+   ========================================================================= */
+.bht-rf-field-error input,
+.bht-rf-field-error select,
+.bht-rf-field-error textarea {
+    border-color: #dc2626 !important;
+}
+
+.bht-rf-field-error-msg {
+    font-size: 13px;
+    color: #dc2626;
+    margin-top: 0.2rem;
+}
+
+.bht-rf-checkbox-error {
+    color: #dc2626;
+    font-size: 13px;
+    margin-top: -0.5rem;
+    margin-bottom: 0.75rem;
+}
+
+/* =========================================================================
+   Honeypot (invisible to users)
+   ========================================================================= */
+.bht-rf-hp {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 0;
+    width: 0;
+    z-index: -1;
+    overflow: hidden;
+}
+
+/* =========================================================================
+   Responsive
+   ---------------------------------------------------------------------------
+   1014px breakpoint — collapse the 2-col grid; stack the header crumbs
+                       and hide the vertical dividers (the horizontal <hr>
+                       between header and intro stays).
+                       Also drops every text element by 2px so the form
+                       feels tighter on mobile while keeping the same
+                       desktop scale (18→16, 16→14, 20→18, 15→13, 13→11).
+   540px breakpoint  — mobile padding + stack the persons/room row.
+   ========================================================================= */
+@media (max-width: 1014px) {
+    .bht-rf-modal {
+        padding: 2rem 1.5rem;
+    }
+
+    .bht-rf-grid {
+        grid-template-columns: 1fr;
+        gap: 1.75rem;
+    }
+
+    .bht-rf-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .bht-rf-header-divider {
+        display: none;
+    }
+
+    .bht-rf-intro {
+        margin-bottom: 40px;
+    }
+
+    /* ---- Mobile typography: every text element -2px (same scale) ---- */
+    .bht-rf-header-item,
+    .bht-rf-intro,
+    .bht-rf-section-title,
+    .bht-rf-modal label {
+        font-size: 16px;
+    }
+
+    .bht-rf-section-hint,
+    .bht-rf-modal input[type="text"],
+    .bht-rf-modal input[type="email"],
+    .bht-rf-modal input[type="tel"],
+    .bht-rf-modal input[type="number"],
+    .bht-rf-modal select,
+    .bht-rf-modal textarea {
+        font-size: 14px;
+    }
+
+    .bht-rf-modal ::placeholder {
+        font-size: 16px;
+    }
+
+    .bht-rf-departure-label {
+        font-size: 18px;
+    }
+
+    .bht-rf-checkbox-field label {
+        font-size: 16px;
+    }
+
+    .bht-rf-privacy,
+    .bht-rf-field-error-msg,
+    .bht-rf-departures-error,
+    .bht-rf-checkbox-error {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 540px) {
+    .bht-rf-modal {
+        padding: 1.5rem 1.15rem;
+    }
+
+    .bht-rf-row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    /* Persons gets a fixed width on desktop so the row reads ~180px / rest;
+       once the row stacks, drop the cap so the field fills the column. */
+    .bht-rf-row > .bht-rf-field:has(#bhtPersons) {
+        flex: 1 1 auto;
+    }
+}
