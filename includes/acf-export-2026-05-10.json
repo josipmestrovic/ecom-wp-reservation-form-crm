@@ -1,0 +1,798 @@
+[
+    {
+        "key": "group_69c6336a76194",
+        "title": "Tour Details",
+        "fields": [
+            {
+                "key": "field_69c63e383a5b8",
+                "label": "Basic Information",
+                "name": "",
+                "aria-label": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 0,
+                "selected": 0
+            },
+            {
+                "key": "field_69de4888a41c9",
+                "label": "Featured Image",
+                "name": "featured_image",
+                "aria-label": "",
+                "type": "image",
+                "instructions": "Glavna slika ture koja se prikazuje na vrhu stranice i na karticama",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "array",
+                "library": "all",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": "",
+                "allow_in_bindings": 0,
+                "preview_size": "medium"
+            },
+            {
+                "key": "field_69de49bd623a2",
+                "label": "Tour Code",
+                "name": "tour_code",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "Interna šifra u formatu BHTxxxx (npr. BHT0063)",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "BHT",
+                "maxlength": "",
+                "allow_in_bindings": 0,
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_69de4ae5af9f4",
+                "label": "Tour Duration",
+                "name": "tour_duration",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "Slobodni tekst trajanja: \"8 days\", \"13 days\", \"3 nights\", \"6–9 hours\"",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "allow_in_bindings": 0,
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_69de4b31af9f5",
+                "label": "Feature this tour on homepage?",
+                "name": "tour_type",
+                "aria-label": "",
+                "type": "checkbox",
+                "instructions": "Opcije: Istaknuto da \/ ne.",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "yes": "yes"
+                },
+                "default_value": [],
+                "return_format": "value",
+                "allow_custom": 0,
+                "allow_in_bindings": 0,
+                "layout": "horizontal",
+                "toggle": 0,
+                "save_custom": 0,
+                "custom_choice_button_text": "Add new choice"
+            },
+            {
+                "key": "field_69de4aadaf9f3",
+                "label": "Tour Tagline",
+                "name": "tour_tagline",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "Kratki podnaslov ispod naziva (npr. \"Croatia 8 Days Tour — from green Plitvice lakes to crystal blue Adriatic\")",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "allow_in_bindings": 0,
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_69de55eb99cb7",
+                "label": "Gallery",
+                "name": "tour_gallery",
+                "aria-label": "",
+                "type": "gallery",
+                "instructions": "Image polja za galeriju ture, podržava do 16 fotografija koje će prikazivati ispod glavne slike u karticama.",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "array",
+                "library": "all",
+                "min": 1,
+                "max": 16,
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": "",
+                "insert": "append",
+                "preview_size": "medium"
+            },
+            {
+                "key": "field_69de530c04630",
+                "label": "Tour Description",
+                "name": "",
+                "aria-label": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 0,
+                "selected": 0
+            },
+            {
+                "key": "field_69c63eaeab03b",
+                "label": "Tour Description",
+                "name": "tour_description",
+                "aria-label": "",
+                "type": "wysiwyg",
+                "instructions": "Glavni opisni rich text. Uključuje sve narativno u jednom polju. Podržava slike, formatiranje, linkove.",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "allow_in_bindings": 0,
+                "tabs": "all",
+                "toolbar": "basic",
+                "media_upload": 0,
+                "delay": 0
+            },
+            {
+                "key": "field_69de53de99cb5",
+                "label": "Itinerary",
+                "name": "",
+                "aria-label": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 0,
+                "selected": 0
+            },
+            {
+                "key": "field_69de53e599cb6",
+                "label": "Tour Itinerary",
+                "name": "tour_itinerary",
+                "aria-label": "",
+                "type": "wysiwyg",
+                "instructions": "Kompletni plan puta, dan po dam, u jednom rich text polju. Koristiti headinge (H3) za svaki dan (npr. \"Day 1 — Arrival in Zagreb\"), a ispod toga opis aktivnosti.",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "allow_in_bindings": 0,
+                "tabs": "all",
+                "toolbar": "full",
+                "media_upload": 0,
+                "delay": 0
+            },
+            {
+                "key": "field_69c6337804025",
+                "label": "Prices & Dates",
+                "name": "",
+                "aria-label": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 0,
+                "selected": 0
+            },
+            {
+                "key": "field_69c633cc8775e",
+                "label": "Pricing Note",
+                "name": "tour_pricing_note",
+                "aria-label": "",
+                "type": "wysiwyg",
+                "instructions": "Header note, e.g. \"Prices based on 25 people in the group\", you can add bold to emphasis important information.",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "allow_in_bindings": 0,
+                "tabs": "all",
+                "toolbar": "basic",
+                "media_upload": 0,
+                "delay": 0
+            },
+            {
+                "key": "field_69c6340909d89",
+                "label": "Departure Dates",
+                "name": "tour_departures",
+                "aria-label": "",
+                "type": "repeater",
+                "instructions": "Each row = one departure date",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "block",
+                "pagination": 0,
+                "min": 0,
+                "max": 0,
+                "collapsed": "",
+                "button_label": "Add Row",
+                "rows_per_page": 20,
+                "sub_fields": [
+                    {
+                        "key": "field_69c634400d0cd",
+                        "label": "Departure Date",
+                        "name": "departure_label",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "e.g. \"June 16 – 27, 2025\" or \"Private Tour — any date\"",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "allow_in_bindings": 0,
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "parent_repeater": "field_69c6340909d89"
+                    },
+                    {
+                        "key": "field_69c6345b0d0ce",
+                        "label": "Departure Note",
+                        "name": "departure_note",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "Optional note, e.g. \"45th Anniversary\"",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "allow_in_bindings": 0,
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "parent_repeater": "field_69c6340909d89"
+                    },
+                    {
+                        "key": "field_69c634730d0cf",
+                        "label": "Prices",
+                        "name": "prices",
+                        "aria-label": "",
+                        "type": "repeater",
+                        "instructions": "Each row = one price for a city or group of cities",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "layout": "table",
+                        "pagination": 0,
+                        "min": 0,
+                        "max": 0,
+                        "collapsed": "",
+                        "button_label": "Add Row",
+                        "rows_per_page": 20,
+                        "sub_fields": [
+                            {
+                                "key": "field_69c634910d0d0",
+                                "label": "Price Description",
+                                "name": "price_description",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "e.g. \"Land and air from New York JFK, Newark EWR\"",
+                                "required": 1,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": "",
+                                "parent_repeater": "field_69c634730d0cf"
+                            },
+                            {
+                                "key": "field_69c634d30d0d1",
+                                "label": "Price Amount",
+                                "name": "price_amount",
+                                "aria-label": "",
+                                "type": "number",
+                                "instructions": "e.g. 4080.00",
+                                "required": 1,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "min": "",
+                                "max": "",
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "step": "0.01",
+                                "prepend": "$",
+                                "append": "",
+                                "parent_repeater": "field_69c634730d0cf"
+                            }
+                        ],
+                        "parent_repeater": "field_69c6340909d89"
+                    },
+                    {
+                        "key": "field_69c6352d37b8a",
+                        "label": "Land Only Price",
+                        "name": "land_only_price",
+                        "aria-label": "",
+                        "type": "number",
+                        "instructions": "Price without airfare, e.g. 2870.00",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "min": "",
+                        "max": "",
+                        "allow_in_bindings": 0,
+                        "placeholder": "",
+                        "step": "0.01",
+                        "prepend": "$",
+                        "append": "",
+                        "parent_repeater": "field_69c6340909d89"
+                    },
+                    {
+                        "key": "field_69c6355637b8b",
+                        "label": "Single Room Supplement",
+                        "name": "single_room_supplement",
+                        "aria-label": "",
+                        "type": "number",
+                        "instructions": "Single room charge, e.g. 830.00",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "min": "",
+                        "max": "",
+                        "allow_in_bindings": 0,
+                        "placeholder": "",
+                        "step": "0.01",
+                        "prepend": "$",
+                        "append": "",
+                        "parent_repeater": "field_69c6340909d89"
+                    }
+                ]
+            },
+            {
+                "key": "field_69c635a837b8c",
+                "label": "Pricing Footer",
+                "name": "pricing_footer",
+                "aria-label": "",
+                "type": "wysiwyg",
+                "instructions": "Footer text displayed below all prices",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "allow_in_bindings": 0,
+                "tabs": "all",
+                "toolbar": "basic",
+                "media_upload": 0,
+                "delay": 0
+            },
+            {
+                "key": "field_69df5f68717f6",
+                "label": "Extensions",
+                "name": "",
+                "aria-label": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 0,
+                "selected": 0
+            },
+            {
+                "key": "field_69df61200a182",
+                "label": "Does this tour got extensions?",
+                "name": "tour_extensions_boolean",
+                "aria-label": "",
+                "type": "true_false",
+                "instructions": "Otvara dva nova rich text polja za plan puta (itinerary) i opis (description) ekstenzije.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "message": "Označiti ako se žele dodati ekstenzije.",
+                "default_value": 0,
+                "allow_in_bindings": 0,
+                "ui": 0,
+                "ui_on_text": "",
+                "ui_off_text": ""
+            },
+            {
+                "key": "field_69df5f8a717f7",
+                "label": "Tour Extension Info",
+                "name": "tour_extension_info",
+                "aria-label": "",
+                "type": "wysiwyg",
+                "instructions": "Opis ekstenzije, što uključuje, cijena produžetka...",
+                "required": 1,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_69df61200a182",
+                            "operator": "==",
+                            "value": "1"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "allow_in_bindings": 0,
+                "tabs": "all",
+                "toolbar": "basic",
+                "media_upload": 0,
+                "delay": 0
+            },
+            {
+                "key": "field_69df5fdf717f8",
+                "label": "Tour Extension Itinerary",
+                "name": "tour_extension_itinerary",
+                "aria-label": "",
+                "type": "wysiwyg",
+                "instructions": "Plan puta za produžetak ture (npr. \"+3 noći Međugorje\"). Koristiti headinge (H3) za svaki dan (npr. \"Day 1 — Arrival in Zagreb\"), a ispod toga opis aktivnosti.",
+                "required": 1,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_69df61200a182",
+                            "operator": "==",
+                            "value": "1"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "allow_in_bindings": 0,
+                "tabs": "all",
+                "toolbar": "full",
+                "media_upload": 0,
+                "delay": 0
+            },
+            {
+                "key": "field_69df6569ca7b3",
+                "label": "Included And Not Included",
+                "name": "",
+                "aria-label": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 0,
+                "selected": 0
+            },
+            {
+                "key": "field_69df6599ca7b4",
+                "label": "Tour Includes",
+                "name": "tour_includes",
+                "aria-label": "",
+                "type": "wysiwyg",
+                "instructions": "Lista stavki uključenih u cijenu ture. Koristiti bullet listu.",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "allow_in_bindings": 0,
+                "tabs": "all",
+                "toolbar": "basic",
+                "media_upload": 0,
+                "delay": 0
+            },
+            {
+                "key": "field_69df685324934",
+                "label": "Tour Not Included",
+                "name": "tour_not_included",
+                "aria-label": "",
+                "type": "wysiwyg",
+                "instructions": "Lista stavki koje nisu uključene u cijenu ture. Koristiti bullet listu.",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "allow_in_bindings": 0,
+                "tabs": "all",
+                "toolbar": "basic",
+                "media_upload": 0,
+                "delay": 0
+            },
+            {
+                "key": "field_69df6639ca7b5",
+                "label": "Important Notes",
+                "name": "",
+                "aria-label": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 0,
+                "selected": 0
+            },
+            {
+                "key": "field_69df6767ca7b6",
+                "label": "Important Notes",
+                "name": "important_notes",
+                "aria-label": "",
+                "type": "wysiwyg",
+                "instructions": "Upozorenja: valjanost putovnice, airline policy, custom tour mogućnost, ETIAS info.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "allow_in_bindings": 0,
+                "tabs": "all",
+                "toolbar": "basic",
+                "media_upload": 0,
+                "delay": 0
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "catholic-tour"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "",
+        "show_in_rest": 0,
+        "display_title": ""
+    },
+    {
+        "key": "post_type_69be4c1b1bd38",
+        "title": "Catholic Tours",
+        "menu_order": 0,
+        "active": true,
+        "post_type": "catholic-tour",
+        "advanced_configuration": true,
+        "import_source": "",
+        "import_date": "",
+        "labels": {
+            "name": "Catholic Tours",
+            "singular_name": "Catholic Tour",
+            "menu_name": "Catholic Tours",
+            "all_items": "All Catholic Tours",
+            "edit_item": "Edit Catholic Tour",
+            "view_item": "View Catholic Tour",
+            "view_items": "View Catholic Tours",
+            "add_new_item": "Add New Catholic Tour",
+            "add_new": "Add New Catholic Tour",
+            "new_item": "New Catholic Tour",
+            "parent_item_colon": "Parent Catholic Tour:",
+            "search_items": "Search Catholic Tours",
+            "not_found": "No catholic tours found",
+            "not_found_in_trash": "No catholic tours found in Trash",
+            "archives": "Catholic Tour Archives",
+            "attributes": "Catholic Tour Attributes",
+            "featured_image": "",
+            "set_featured_image": "",
+            "remove_featured_image": "",
+            "use_featured_image": "",
+            "insert_into_item": "Insert into catholic tour",
+            "uploaded_to_this_item": "Uploaded to this catholic tour",
+            "filter_items_list": "Filter catholic tours list",
+            "filter_by_date": "Filter catholic tours by date",
+            "items_list_navigation": "Catholic Tours list navigation",
+            "items_list": "Catholic Tours list",
+            "item_published": "Catholic Tour published.",
+            "item_published_privately": "Catholic Tour published privately.",
+            "item_reverted_to_draft": "Catholic Tour reverted to draft.",
+            "item_scheduled": "Catholic Tour scheduled.",
+            "item_updated": "Catholic Tour updated.",
+            "item_link": "Catholic Tour Link",
+            "item_link_description": "A link to a catholic tour."
+        },
+        "description": "",
+        "public": true,
+        "hierarchical": false,
+        "exclude_from_search": false,
+        "publicly_queryable": true,
+        "show_ui": true,
+        "show_in_menu": true,
+        "admin_menu_parent": "",
+        "show_in_admin_bar": true,
+        "show_in_nav_menus": true,
+        "show_in_rest": true,
+        "rest_base": "",
+        "rest_namespace": "wp\/v2",
+        "rest_controller_class": "WP_REST_Posts_Controller",
+        "menu_position": 2,
+        "menu_icon": {
+            "type": "dashicons",
+            "value": "dashicons-airplane"
+        },
+        "rename_capabilities": false,
+        "singular_capability_name": "post",
+        "plural_capability_name": "posts",
+        "supports": [
+            "title",
+            "custom-fields"
+        ],
+        "taxonomies": [
+            "category"
+        ],
+        "has_archive": false,
+        "has_archive_slug": "",
+        "rewrite": {
+            "permalink_rewrite": "custom_permalink",
+            "slug": "catholic-tour\/%category%",
+            "with_front": "0",
+            "feeds": "0",
+            "pages": "1"
+        },
+        "query_var": "post_type_key",
+        "query_var_name": "",
+        "can_export": true,
+        "delete_with_user": false,
+        "register_meta_box_cb": "",
+        "enter_title_here": ""
+    }
+]

@@ -21,6 +21,18 @@ bootstrap from `functions.php`, and you have:
 
 ---
 
+## Screenshots
+
+**WP-Admin → Reservations** — list view with status pills, SLA-aware Age column, tour-code search and combined status + date filters:
+
+![WP-Admin Reservations list view](screenshot-admin-ui.png)
+
+**Front-end popup** — opens from any `#ecom-booking-btn` trigger on a `catholic-tour` page; departures auto-filled from ACF, extension checkbox shown only when enabled:
+
+![Front-end reservation popup](screenshot-frontend.png)
+
+---
+
 ## Install
 
 ### Option A — clone (recommended, lets you `git pull` updates)
@@ -57,19 +69,22 @@ via `dbDelta()`. Re-running has no effect once the schema version matches.
 
 ```
 reservation-form/
-├── README.md                 ← you are here
-├── reservation-form.php      ← thin bootstrap, requires every includes/*.php
-├── reservation-form.css      ← popup styles (front-end, scoped under .bht-rf-)
-├── reservation-form.js       ← popup behaviour + AJAX (vanilla JS, no deps)
+├── README.md                          ← you are here
+├── screenshot-admin-ui.png            ← WP-Admin list view (used in this README)
+├── screenshot-frontend.png            ← front-end popup (used in this README)
+├── reservation-form.php               ← thin bootstrap, requires every includes/*.php
+├── reservation-form.css               ← popup styles (front-end, scoped under .bht-rf-)
+├── reservation-form.js                ← popup behaviour + AJAX (vanilla JS, no deps)
 └── includes/
-    ├── db.php                ← schema, version tracking, table + status helpers
-    ├── assets.php            ← wp_register_style / wp_register_script
-    ├── form.php              ← renders popup markup in wp_footer
-    ├── handler.php           ← AJAX endpoint: sanitize → validate → insert → email
-    ├── mailer.php            ← admin notification + client confirmation
-    ├── admin.php             ← admin menu, list page, detail page, status + notes
-    ├── admin.js              ← inline status-pill AJAX (admin-only, ~60 lines)
-    └── admin-list-table.php  ← BHT_Reservations_List_Table (extends WP_List_Table)
+    ├── db.php                         ← schema, version tracking, table + status helpers
+    ├── assets.php                     ← wp_register_style / wp_register_script
+    ├── form.php                       ← renders popup markup in wp_footer
+    ├── handler.php                    ← AJAX endpoint: sanitize → validate → insert → email
+    ├── mailer.php                     ← admin notification + client confirmation
+    ├── admin.php                      ← admin menu, list page, detail page, status + notes
+    ├── admin.js                       ← inline status-pill AJAX (admin-only, ~60 lines)
+    ├── admin-list-table.php           ← BHT_Reservations_List_Table (extends WP_List_Table)
+    └── acf-export-2026-05-10.json     ← ACF field group + post-type export (see below)
 ```
 
 ---
@@ -270,6 +285,26 @@ Schema version: stored in option `bht_reservation_db_version` (currently `1.2`).
 
 If `tour_departures` has rows → checkbox list is rendered.
 If empty → the form falls back to a free-text "Dates" input.
+
+### Bundled ACF export
+
+The full field schema this module was built against is shipped in the repo as
+[`includes/acf-export-2026-05-10.json`](includes/acf-export-2026-05-10.json).
+It contains:
+
+- The **`catholic-tour`** custom post type definition (labels, `dashicons-airplane`
+  icon, `catholic-tour/%category%` permalink rewrite, `category` taxonomy,
+  `title` + `custom-fields` supports).
+- The **Tour Details** ACF field group with every field used across the site
+  (featured image, gallery, tagline, WYSIWYG description + itinerary, pricing
+  note, departures repeater, extensions toggle, etc.) — a superset of the three
+  fields the reservation form actually reads.
+
+Import it on a fresh site via **WP-Admin → ACF → Tools → Import Field Groups**
+(requires ACF Pro for the Repeater + Gallery field types) to recreate the exact
+tour schema. The form itself only depends on `tour_code`,
+`tour_extensions_boolean`, and `tour_departures` — the rest of the field group
+is here for reference / parity with the production site.
 
 ---
 
